@@ -65,8 +65,10 @@ class LinkedList:
             while current.get_next() != self.tail:
                 current = current.get_next()
             # `current` is now pointing at the Node right
-            # before the tail Node
+            # set to before the tail Node
             self.tail = current
+            # delete the tail node
+            self.tail.set_next(None)
         
         return data
     '''
