@@ -18,7 +18,6 @@ Stretch: What if you could only use instances of your Stack class to implement t
 import sys
 sys.path.append('.')
 from singly_linked_list.singly_linked_list import LinkedList
-
 class Queue:
     def __init__(self):
         self.size = 0
@@ -31,10 +30,9 @@ class Queue:
 
     def enqueue(self, value):
         #return self.storage.append(value)
-        data = self.storage.add_to_tail(value)
+        self.storage.add_to_tail(value)
         #self.size = self.storage.get_len()
         self.size += 1
-        return data
 
     def dequeue(self):
         # if(len(self.storage)>0):
