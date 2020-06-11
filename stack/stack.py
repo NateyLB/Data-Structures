@@ -21,14 +21,15 @@ class Stack:
 
     def __len__(self):
         #return len(self.storage)
-        return self.storage.get_len()
+        return self.size
 
     def push(self, value):
         # data = self.storage.append(value)
         # self.size = len(self.storage)
         # return data
         data = self.storage.add_to_tail(value)
-        self.size = self.storage.get_len()
+        #self.size = self.storage.get_len()
+        self.size += 1
         return data
 
     def pop(self):
@@ -40,7 +41,8 @@ class Stack:
         #     pass
         if self.storage.get_len() > 0:
             data = self.storage.remove_tail()
-            self.size = self.storage.get_len()
+            #self.size = self.storage.get_len()
+            self.size -= 1
             return data
         else:
             pass

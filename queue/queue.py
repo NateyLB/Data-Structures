@@ -27,12 +27,13 @@ class Queue:
     
     def __len__(self):
         #return len(self.storage)
-        return self.storage.get_len()
+        return self.size
 
     def enqueue(self, value):
         #return self.storage.append(value)
         data = self.storage.add_to_tail(value)
-        self.size = self.storage.get_len()
+        #self.size = self.storage.get_len()
+        self.size += 1
         return data
 
     def dequeue(self):
@@ -42,7 +43,8 @@ class Queue:
         #     pass
         if self.storage.get_len() > 0:
             data = self.storage.remove_head()
-            self.size = self.storage.get_len()
+            #self.size = self.storage.get_len()
+            self.size -= 1
             return data
         else:
             pass
